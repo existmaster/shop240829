@@ -9,5 +9,7 @@ import shop.domain.*;
     collectionResourceRel = "deliveries",
     path = "deliveries"
 )
-public interface DeliveryRepository
-    extends PagingAndSortingRepository<Delivery, Long> {}
+public interface DeliveryRepository extends PagingAndSortingRepository<Delivery, Long> {
+    Delivery findByOrderId(Long orderId);
+    void deleteByOrderId(Long orderId);
+}
